@@ -1,4 +1,6 @@
-const BASE = '/api'
+const BASE = import.meta.env.PROD 
+  ? 'https://paypeek-backend-production.up.railway.app/api' 
+  : '/api'
 
 async function req(path, opts = {}) {
   const res = await fetch(BASE + path, {
